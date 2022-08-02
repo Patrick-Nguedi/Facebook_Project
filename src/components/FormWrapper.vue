@@ -1,8 +1,7 @@
 <template>
   <div class="flex flex-col items-center lg:w-2/5">
-    <form @submit.prevent="checkForm" 
-      class="mx-2 bg-white rounded-xl drop-shadow-xl 
-      items-center flex flex-col lg:w-96 md:h-96">
+    <form @submit="verifyUser" class="mx-2 bg-white rounded-xl drop-shadow-xl items-center flex flex-col 
+    lg:w-96 md:h-96">
       <input 
         class="caret-blue-600 border border-gray-300 py-3 
         focus:outline outline-blue-500 px-4 w-11/12 mt-4 rounded-md" 
@@ -14,8 +13,8 @@
         type="password" placeholder="enter password"
         v-model="user.password" 
       />
-      <ButtonBadge 
-        nameButton="Se connecter" 
+      <Button 
+        name="Se connecter" 
         class="bg-blue-500 mx-2 w-11/12"
         @click="verifyUser"
       />
@@ -23,10 +22,9 @@
           Mot de passe oublie ?
         </span>
         <hr class="border-1 border-gray-300 lg:w-11/12 w-80 mx-6 mt-4 mb-2"/>
-      <ButtonBadge 
-        nameButton="Creer nouveau compte" 
+      <Button 
+        name="Creer nouveau compte" 
         class="bg-green-600 w-52 mb-6"
-        @click="verifyUser"
       />
     </form>
     <span class="mt-5 font-mono mx-4 lg:text-xs">
@@ -38,29 +36,29 @@
   </div>
 </template>
 
-<script>
-import ButtonBadge from './ButtonBadge.vue';
+<script lang="ts">
+import Button from './Button.vue';
 export default {
-  name: "FormCard",
+  name: "FormWrapper",
   components: {
-    ButtonBadge
+    Button
   },
   data() {
     return {
-      errors: [],
       user:{
           mail: "",
           password: "",
       },
     };
   },
-  emits:['perform-connecting'],
+  emits:['performConnecting'],
   methods: {
-    verifyUser(){
+    verifyUser(event: Event){
+      event.preventDefault();
         if(this.user.mail && this.user.password){
-          this.$emit('perform-connecting',this.user)
+          this.$emit('performConnecting',this.user)
           return;
-        } console.log("Vide")
+        } console.log("vide")
       }
   }
 }
