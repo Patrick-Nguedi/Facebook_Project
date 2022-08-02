@@ -1,13 +1,27 @@
 {
   "en": {
-      "summary": "Avec Facebook, partagez et restez en contact avec votre entourage",
-      "consigneTitle" : "Create a page",
-      "consigneFull" : "for a celebrity, a brand or a company"
+      "summary": "With Facebook, share and stay in touch with those around you.",
+      "consigneTitle": "Create a page",
+      "consigneFull": "for a celebrity, a brand or a company",
+      "mail": "e-mail address",
+      "forgot": "forgot password",
+      "password": "password",
+      "button":{
+        "nameConnect": "Log In",
+        "nameCreate": " Create Account"
+      }
   },
 
   "fr": {
-      "summary": "With Facebook, share and stay in touch with those around you.",
-      "consigneTitle" : "Creer une page",
-      "consigneFull" : "pour une celebrite, une marque ou une entreprise"
+      "summary": "Avec Facebook, partagez et restez en contact avec votre entourage.",
+      "consigneTitle": "Creer une page",
+      "consigneFull": "pour une celebrite, une marque ou une entreprise",
+      "mail": "adresse email",
+      "forgot": "mot de passe oublie",
+      "password": "mot de passe",
+      "button":{
+        "nameConnect": "Se connecter",
+        "nameCreate": "Creer un compte"
+      }
   }
 }

@@ -9,14 +9,14 @@
         </span>
         <span class="mx-4 hidden lg:contents lg:text-lg font-normal 
             tracking-tighter font-mono text-xl">
-              Avec Facebook, partagez et restez en contact avec votre entourage.
+              {{$t('summary')}}
         </span>
         <template v-if="list.length > 0">
           <div class="font-semiebold text-xl px-4 mt-4 
                 border-2 border-blue-500 contrast-150 rounded-xl"
             v-for="(item, index) in list" :key="index">
-            <h2>Mail : {{item.mail}}</h2>
-            <h2>Password : {{item.password}}</h2>
+            <h2>{{$t('mail')}} : {{item.mail}}</h2>
+            <h2>{{$t('password')}} : {{item.password}}</h2>
           </div>
         </template>
       </div>
@@ -30,7 +30,7 @@ import FormWrapper from './FormWrapper.vue';
   export default {
     name: "HomePage",
     components: { 
-      FormWrapper 
+      FormWrapper,
     },
     data(){
       return{
