@@ -20,17 +20,17 @@
           </div>
         </template>
       </div>
-      <FormCard @perform-connecting="ajouter"/>
+      <FormWrapper @perform-connecting="displayUser"/>
     </div>
   </div>
 </template>
 
-<script>
-import FormCard from './FormCard.vue';
+<script lang="ts">
+import FormWrapper from './FormWrapper.vue';
   export default {
     name: "HomePage",
     components: { 
-      FormCard 
+      FormWrapper 
     },
     data(){
       return{
@@ -38,9 +38,8 @@ import FormCard from './FormCard.vue';
       } 
     },
    methods:{
-      ajouter(message){
-          this.list.push(message);
-        // console.log(this.list);
+      displayUser(message: String){
+        this.list.push(message)
         message = "";
       }
     }
