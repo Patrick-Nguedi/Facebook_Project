@@ -9,7 +9,9 @@
       "button":{
         "nameConnect": "Log In",
         "nameCreate": " Create Account"
-      }
+      },
+      "placeholder_mail": "Enter email adress",
+      "placeholder_pass": "Enter password"
   },
 
   "fr": {
@@ -22,6 +24,8 @@
       "button":{
         "nameConnect": "Se connecter",
         "nameCreate": "Creer un compte"
-      }
+      },
+      "placeholder_mail": "Entrer une adresse e-mail",
+      "placeholder_pass": "Enter le mot de passe"
   }
 }

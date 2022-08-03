@@ -4,12 +4,12 @@
       lg:mx-20 lg:flex-row lg:justify-evenly">
       <div class="flex flex-col lg:w-2/5 lg:text-left">
         <span class="lg:mt-20 lg:mb-0 font-mono tracking-tighter 
-          font-extrabold text-blue-600 contrast-125 text-6xl mb-8">
-            facebook
+        font-extrabold text-blue-600 contrast-125 text-6xl mb-8">
+          facebook
         </span>
         <span class="mx-4 hidden lg:contents lg:text-lg font-normal 
-            tracking-tighter font-mono text-xl">
-              {{$t('summary')}}
+          tracking-tighter font-mono text-xl">
+            {{$t('summary')}}
         </span>
         <template v-if="list.length > 0">
           <div class="font-semiebold text-xl px-4 mt-4 
@@ -29,21 +29,21 @@
 import FormWrapper from './FormWrapper.vue';
   export default {
     name: "HomePage",
-    components: { 
-      FormWrapper,
-    },
-    data(){
-      return{
-        list:[]
-      } 
-    },
-   methods:{
-      displayUser(message: String){
-        this.list.push(message)
-        message = "";
-      }
+    components: {
+    FormWrapper,
+  },
+  data(){
+    return{
+      list:[]
+    } 
+  },
+  methods:{
+    displayUser(message: String){
+      this.list.push(message)
+      message = "";
     }
   }
+}
 
 </script>
 
