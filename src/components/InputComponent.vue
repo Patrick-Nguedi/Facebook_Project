@@ -6,7 +6,7 @@
 
 <script lang="ts">
   export default {
-    name: "Input",
+    name: "InputComponent",
     props:{
       modelValue: {
         type: String,

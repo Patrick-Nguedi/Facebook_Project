@@ -2,8 +2,8 @@
   <div class="flex flex-col items-center lg:w-2/5">
     <form @submit="verifyUser" class="mx-2 bg-white rounded-xl drop-shadow-xl items-center flex flex-col 
     lg:w-96 md:h-96">
-      <Input type="text" :placeholder="$t('placeholder_mail')" v-model="user.mail" />
-      <Input type="password" :placeholder="$t('placeholder_pass')" v-model="user.password" />
+      <InputComponent type="text" :placeholder="$t('placeholder_mail')" v-model="user.mail" />
+      <InputComponent type="password" :placeholder="$t('placeholder_pass')" v-model="user.password" />
       <Button />
         <span class="mt-4 text-center text-blue-500 hover:underline cursor-pointer">
           {{$t('forgot')}} 
@@ -24,12 +24,12 @@
 </template>
 
 <script lang="ts">
-import Input from "./Input.vue";
+import InputComponent from "./InputComponent.vue";
 import Button from "./Button.vue";
 
 export default {
   name: "FormWrapper",
-  components:{ Input, Button },
+  components:{ InputComponent, Button },
   data() {
     return {
       user:{
@@ -43,7 +43,9 @@ export default {
     verifyUser(event: Event){
       event.preventDefault();
       if(this.user.mail && this.user.password){
-        this.$emit('performConnecting',this.user)
+        this.$emit('performConnecting',{...this.user})
+        this.user.mail=""
+        this.user.password=""
       }
     }
   }

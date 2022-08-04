@@ -40,7 +40,6 @@ import FormWrapper from './FormWrapper.vue';
   methods:{
     displayUser(message: String){
       this.list.push(message)
-      message = "";
     }
   }
 }
