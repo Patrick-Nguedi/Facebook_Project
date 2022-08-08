@@ -24,31 +24,30 @@
 </template>
 
 <script lang="ts">
+import {reactive} from "vue";
 import InputComponent from "./InputComponent.vue";
 import Button from "./Button.vue";
-
+interface User {
+  mail: string,
+  password: string
+}
 export default {
-  name: "FormWrapper",
-  components:{ InputComponent, Button },
-  data() {
-    return {
-      user:{
-        mail: "",
-        password: "",
-      }
+  name:"FormWrapper.vue",
+  components : {InputComponent, Button},
+  emits: ["performConnecting"],
+  setup: (props, { emit }) => {
+    const user : User = reactive({ mail:"", password:""})
+
+    function verifyUser(event: Event) {
+      event.preventDefault();
+      emit('performConnecting',{...user})
+      user.mail=""
+      user.password=""
+    }
+    return{
+      user, emit, verifyUser
     }
   },
-  emits:['performConnecting'],
-  methods: {
-    verifyUser(event: Event){
-      event.preventDefault();
-      if(this.user.mail && this.user.password){
-        this.$emit('performConnecting',{...this.user})
-        this.user.mail=""
-        this.user.password=""
-      }
-    }
-  }
 }
 </script>
 
