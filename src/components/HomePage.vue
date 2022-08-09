@@ -26,20 +26,20 @@
 </template>
 
 <script lang="ts">
+import {reactive} from "vue"
 import FormWrapper from './FormWrapper.vue';
   export default {
     name: "HomePage",
     components: {
-    FormWrapper,
-  },
-  data(){
+    FormWrapper
+    },
+  setup(){
+    const list:string[] = reactive([])
+    function displayUser(message: string){
+      list.push(message)
+    }
     return{
-      list:[]
-    } 
-  },
-  methods:{
-    displayUser(message: String){
-      this.list.push(message)
+      list, displayUser
     }
   }
 }
