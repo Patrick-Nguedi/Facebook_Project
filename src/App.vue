@@ -1,22 +1,21 @@
 <template>
-  <HomePage />
+  <ItemMenu icon="academy" label="Academy Year" />
 </template>
 
 <script lang="ts">
-import HomePage from './components/HomePage.vue';
- export default {
-  name: "App",
+import ItemMenu from './components/ItemMenu.vue'
+export default {
+  name: 'App',
   components: {
-    HomePage,
-},
-  data(){
-    return{
-      list:[]
+    ItemMenu
+  },
+  data () {
+    return {
     }
   },
-  methods:{
+  methods: {
   }
- }
+}
 </script>
 
 <style>
